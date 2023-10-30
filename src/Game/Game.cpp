@@ -5,12 +5,11 @@
 
 using namespace game;
 using entity_t = std::size_t;
-using namespace TypesLitterals;
 
 Game::Game() :
     _manager(Loader()),
     _factory(Factory(ecs)),
-    _menuManager(ecs),
+    _menuManager(ecs)
 {
     sf::VideoMode mode = sf::VideoMode::getDesktopMode();
     try {
@@ -44,12 +43,12 @@ int Game::MainLoop()
 
         // ALL SYSTEMS CALL HERE
         ECS::systems::ControllableSystem().update(this->ecs, this->_entityEvents, this->_window, this->eventMemory);
-        ECS::systems::PositionSystem().update(this->ecs, this->topLeftOffeset);
-        ECS::systems::AnimationSystem().update(this->ecs, deltaTime);
-        ECS::systems::ParallaxSystem().update(this->ecs, deltaTime, this->topLeftOffeset);
-        ECS::systems::MovableSystem().update(this->ecs, this->_entityPositions, this->topLeftOffeset);
-        ECS::systems::ScaleSystem().update(this->ecs);
-        ECS::systems::TextSystem().update(this->ecs, this->_texts);
+        // ECS::systems::PositionSystem().update(this->ecs);
+        // ECS::systems::AnimationSystem().update(this->ecs, deltaTime);
+        // ECS::systems::ParallaxSystem().update(this->ecs, deltaTime);
+        // ECS::systems::MovableSystem().update(this->ecs, this->_entityPositions);
+        // ECS::systems::ScaleSystem().update(this->ecs);
+        // ECS::systems::TextSystem().update(this->ecs, this->_texts);
         this->_window.clear();
 
         // DRAW SYSTEM CALL HERE

@@ -9,6 +9,6 @@ Core::Core()
 
 void Core::run()
 {
-    Game game();
+    Game game;
     game.MainLoop();
 }

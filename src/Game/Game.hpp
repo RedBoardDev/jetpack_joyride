@@ -57,6 +57,7 @@ namespace game {
             MenuManager _menuManager;
 
             long _lastTime;
-
+            int eventMemory;
+            gameState _gameState;
     };
 }
